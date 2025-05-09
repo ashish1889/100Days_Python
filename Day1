@@ -1,0 +1,18 @@
+#Below code prints three Hello world!
+
+print("Hello world!\nHello world!\nHello world!")
+
+O/p-
+Hello world!
+Hello world!
+Hello world!
+
+
+# This line of code will take an input using the input() function
+print("Hello " + input("What is your name?") + "!")
+
+O/p-
+
+What is your name?Ashish
+Hello Ashish!
+
