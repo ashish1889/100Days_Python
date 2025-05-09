@@ -16,3 +16,19 @@ O/p-
 What is your name?Ashish
 Hello Ashish!
 
+
+#One line code to take i/p and print len 
+print(len(input("What is your name?")))
+
+O/p-
+What is your name?Angela Yu
+9
+
+#Above line code converted to multiple lines improving readability
+username = input("What is your name?")
+length = len(username)
+print(length)
+
+O/p-
+What is your name?Angela
+6
