@@ -81,3 +81,145 @@ TypeError: can only concatenate str (not "int") to str
 
 ===================================================================================================================================================================================
 
+print("My age: " + str(12))
+print(123 + 456)
+print(7 - 3)
+print(3 * 2)
+print(5 / 3) # Gives in o/p as float type
+print(5 // 3) # Gives in o/p as int type
+print(2 ** 3) # This is 2^3(exponent)
+
+# PEMDASLR Order - Parentheses, Exponents, Multiplication/Division, Addition/Subtraction
+# ()
+# **
+# * OR /
+# + OR -
+
+# Outputs 7
+print(3 * 3 + 3 / 3 - 3)
+
+# Outputs 3
+print(3 * 3 + 3 / 3 - 3)
+
+
+O/p-
+
+My age: 12
+579
+4
+6
+1.6666666666666667
+1
+8
+7.0
+7.0
+
+===============================================================================================================================
+
+Flooring a Number
+You can floor a number or remove all decimal places using the int() function which converts a floating point number (with decimal places) into an integer (whole number).
+
+int(3.738492) # Becomes 3
+
+Rounding a Number
+However, if you want to round a decimal number to the nearest whole number using the traditional mathematical way, where anything over .5 rounds up and anything below rounds down. Then you can use the python round() function.
+
+round(3.738492) # Becomes 4
+
+round(3.14159) # Becomes 3
+
+round(3.14159, 2) # Becomes 3.14
+
+Assignment Operators
+Assignment operators such as the addition assignment operator += will add the number on the right to the original value of the variable on the left and assign the new value to the variable.
+
++=
+
+-=
+
+*=
+
+/=
+
+f-Strings
+In Python, we can use f-strings to insert a variable or an expression into a string.
+
+age = 12
+
+print(f"I am {age} years old")
+
+# Will output I am 12 years old.
+
+
+bmi = 84 / 1.65 ** 2
+
+# Original Float with decimal places
+print(bmi)
+
+# Flooring the number by converting it into int
+print(int(bmi))
+
+# Rounding the number into a whole number
+print(round(bmi))
+
+# Rounding only to 2 decimal places
+print(round(bmi, 2))
+
+
+## Accumulate
+score = 0
+
+# User scores a point
+score += 1
+print(score)
+
+#Also
+score -= 1
+score *= 2
+score /= 2
+
+score = 0
+height = 1.8
+is_winning = True
+
+print(f"Your score is = {score}, your height is {height}. You are winning is {is_winning}")
+
+
+O/p-
+
+30.85399449035813
+30
+31
+30.85
+1
+Your score is = 0, your height is 1.8. You are winning is True
+===================================================================================================================
+
+Demo
+https://appbrewery.github.io/python-day2-demo/
+
+Very Optional Reading: Floating Point Arithmetic
+https://docs.python.org/3/tutorial/floatingpoint.html
+
+Code-
+
+print("Welcome to the tip calculator!")
+bill = float(input("What was the total bill? $"))
+tip = int(input("What percentage tip would you like to give? 10 12 15 "))
+people = int(input("How many people to split the bill? "))
+tip_as_percent = tip / 100
+total_tip_amount = bill * tip_as_percent
+total_bill = bill + total_tip_amount
+bill_per_person = total_bill / people
+final_amount = round(bill_per_person, 2)
+print(f"Each person should pay: ${final_amount}")
+
+O/p-
+
+Welcome to the tip calculator!
+What was the total bill? $220
+What percentage tip would you like to give? 10 12 15 12
+How many people to split the bill? 7
+Each person should pay: $35.2
+
+
