@@ -1,0 +1,83 @@
+# Subscripting
+print("Hello"[0])
+
+# String
+print("123" + "345")
+
+# Integer = Whole number
+print(123 + 345)
+
+# Large Integers
+print(123_456_789)
+
+# Float = Floating Point Number
+print(3.14159)
+
+# Boolean
+print(True)
+print(False)
+
+
+O/p:
+
+H
+123345
+468
+123456789
+3.14159
+True
+False
+
+================================================================================================================================================================
+# For Type Conversion- str(), int(), float(), bool()
+
+TypeError
+These errors occur when you are using the wrong data type. e.g. len(12345)
+
+Because you can only give the len() function Strings, it will refuse to work and give you a TypeError if you give it a number (Integer).
+
+Type Checking
+You can check the data type of any value or variable in python using the type() function.
+
+print(type("abc")) #will give you <class 'str'>
+
+# Type Checking
+print(type("abc"))
+print(type(123))
+print(type(3.14))
+print(type(True))
+
+
+
+name_of_the_user = input("Enter your name")
+length_of_name = len(name_of_the_user)
+
+print(type("Number of letters in your name: "))  # str
+print(type(length_of_name))  # int
+
+print("Number of letters in your name: " + str(length_of_name))
+
+
+O/p-
+
+<class 'str'>
+<class 'int'>
+<class 'float'>
+<class 'bool'>
+Enter your nameAngela
+<class 'str'>
+<class 'int'>
+Number of letters in your name: 6
+
+* If i put in the code -
+print("Number of letters : " + len(name_of_the_user))
+
+Below error comes-
+
+Traceback (most recent call last):
+  File "/Users/ashishmishra/PycharmProjects/100 Days of Code - The Complete Python Pro Bootcamp/Day 2/Type Error, Checking and Conversion/solution.py", line 27, in <module>
+    print("Number of letters : " + len(name_of_the_user))
+TypeError: can only concatenate str (not "int") to str
+
+===================================================================================================================================================================================
+
