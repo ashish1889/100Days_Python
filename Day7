@@ -1,0 +1,419 @@
+Your goal is to build a Hangman game using everything you have learnt about Python programming.
+
+Demo Final Project
+https://appbrewery.github.io/python-day7-demo/
+
+The project is split into 5 major steps. In each step, there will be multiple TODOs. Your goal is to go through each todo in order and complete them.
+
+You can view all the todos easily in PyCharm by going to View -> Tool Windows -> TODOs
+
+TODO-1
+
+Randomly choose a word from the word_list and assign it to a variable called chosen_word. Then print it.
+
+TODO-2
+Ask the user to guess a letter and assign their answer to a variable called guess. Make the String stored in guess lowercase.
+
+TODO-3
+Check if the letter the user guessed guess is one of the letters in the chosen_word. Loop through each of the letters in the
+chosen_word and print "Right" if the letter is a match, "Wrong" if it's not.
+
+Code-
+
+import random
+word_list = ["aardvark", "baboon", "camel"]
+
+chosen_word = random.choice(word_list)
+print(chosen_word)
+
+guess = input("Guess a letter: ").lower()
+
+for letter in chosen_word:
+    if letter == guess:
+        print("Right")
+    else:
+        print("Wrong")
+
+O/p-
+
+camel
+Guess a letter: m
+Wrong
+Wrong
+Right
+Wrong
+Wrong
+
+=====================================================================================================================================================================
+
+Create an empty String called placeholder.
+For each letter in the chosen_word, add a _ to placeholder.
+So if the chosen_word was "apple", placeholder should be _ _ _ _ _ with 5 "_" representing each letter to guess.
+Print out hint.
+
+Create an empty string called "display".
+Loop through each letter in the chosen_word
+If the letter at that position matches guess then reveal that letter in the display at that position.
+e.g. If the user guessed "p" and the chosen word was "apple", then display should be _ p p _ _.
+Print display and you should see the guessed letter in the correct position.
+But every letter that is not a match is represented with a "_".
+
+Code-
+
+import random
+word_list = ["aardvark", "baboon", "camel"]
+
+chosen_word = random.choice(word_list)
+print(chosen_word)
+
+placeholder = ""
+word_length = len(chosen_word)
+for position in range(word_length):
+    placeholder += "_"
+print(placeholder)
+
+guess = input("Guess a letter: ").lower()
+
+display = ""
+
+for letter in chosen_word:
+    if letter == guess:
+        display += letter
+    else:
+        display += "_"
+
+print(display)
+
+
+O/p-
+
+baboon
+______
+Guess a letter: o
+___oo_
+
+===================================================================================================================================================================
+
+TODO-1
+Use a while loop to let the user guess again.
+The loop should only stop once the user has guessed all the letters in the chosen_word.
+At that point display has no more blanks ("_"). Then you can tell the user they've won.
+
+TODO-2
+Update the for loop so that previous guesses are added to the display String.
+At the moment, when the user makes a new guess, the previous guess gets replaced by a "_". We need to fix that by updating the for loop.
+
+
+Code-
+
+import random
+word_list = ["aardvark", "baboon", "camel"]
+
+chosen_word = random.choice(word_list)
+print(chosen_word)
+
+placeholder = ""
+word_length = len(chosen_word)
+for position in range(word_length):
+    placeholder += "_"
+print(placeholder)
+
+game_over = False
+correct_letters = []
+
+while not game_over:
+    guess = input("Guess a letter: ").lower()
+
+    display = ""
+
+    for letter in chosen_word:
+        if letter == guess:
+            display += letter
+            correct_letters.append(guess)
+        elif letter in correct_letters:
+            display += letter
+        else:
+            display += "_"
+
+    print(display)
+
+    if "_" not in display:
+        game_over = True
+        print("You win.")
+
+
+O/p 1-
+
+aardvark
+________
+Guess a letter: a
+aa___a__
+Guess a letter: r
+aar__ar_
+Guess a letter: d
+aard_ar_
+Guess a letter: v
+aardvar_
+Guess a letter: k
+aardvark
+You win.
+
+O/p 2-
+
+baboon
+______
+Guess a letter: b
+b_b___
+Guess a letter: a
+bab___
+Guess a letter: l
+bab___
+Guess a letter: k
+bab___
+Guess a letter: m
+bab___
+Guess a letter: o
+baboo_
+Guess a letter: h
+baboo_
+Guess a letter: n
+baboon
+You win.
+
+==================================================================================================================================================================
+
+TODO-1:
+Create a variable called lives to keep track of the number of lives left.
+Set lives to equal 6.
+TODO-2:
+If guess is not a letter in the chosen_word, Then reduce lives by 1.
+If lives goes down to 0 then the game should end, and it should print "You lose."
+
+TODO-3:
+print the ASCII art from the list stages that corresponds to the current number of lives the user has remaining.
+
+
+
+Code-
+
+import random
+stages = [r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+word_list = ["aardvark", "baboon", "camel"]
+
+lives = 6
+
+chosen_word = random.choice(word_list)
+print(chosen_word)
+
+placeholder = ""
+word_length = len(chosen_word)
+for position in range(word_length):
+    placeholder += "_"
+print(placeholder)
+
+game_over = False
+correct_letters = []
+
+while not game_over:
+    guess = input("Guess a letter: ").lower()
+
+    display = ""
+
+    for letter in chosen_word:
+        if letter == guess:
+            display += letter
+            correct_letters.append(guess)
+        elif letter in correct_letters:
+            display += letter
+        else:
+            display += "_"
+
+    print(display)
+
+    if guess not in chosen_word:
+        lives -= 1
+        if lives == 0:
+            game_over = True
+            print("You lose.")
+
+    if "_" not in display:
+        game_over = True
+        print("You win.")
+
+    print(stages[lives])
+
+
+
+O/p-
+
+aardvark
+________
+Guess a letter: d
+___d____
+
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+
+Guess a letter: v
+___dv___
+
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+
+Guess a letter: z
+___dv___
+
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+
+Guess a letter: h
+___dv___
+
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+
+Guess a letter: k
+___dv__k
+
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+
+Guess a letter: f
+___dv__k
+
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+Guess a letter: a
+aa_dva_k
+
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+Guess a letter: u
+aa_dva_k
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+
+Guess a letter: t
+aa_dva_k
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+
+Guess a letter: j
+aa_dva_k
+You lose.
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+
+
+==========================================================================================================================================================
+
+
+
