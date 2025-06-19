@@ -1,0 +1,121 @@
+Previously, we've seen that functions allow us to package code into a named block which can be used repeatedly at a later point.
+
+PAUSE 1 - Review
+Create a function called greet().
+Write 3 print statements inside the function.
+Call the greet() function and run your code.
+Inputs
+By adding a variable name inside the parentheses when we create (define) a new function, it allows that function to take inputs when called.
+
+That means we can modify how the function behaves each time by passing in different inputs.
+
+# Creating the function
+def myFunction(input):
+    print(f"Hey! {input}")
+# Using the function
+myFunction("Tommy") 
+# Will output "Hey! Tommy"
+Inputs are Variables
+When you create a function with inputs, you are defining a variable name that will be given to the data that is passed in.
+
+The name of the input variable, e.g. name in this code here: def greet(name): is called the parameter.
+
+The value of the value of the input variable, e.g. Angela when you call the previous greet function: greet("Angela") is called the argument.
+
+Code-
+
+# Simple Function that packages code into a named block
+def greet():
+    print("Hello Angela")
+    print("How do you do Jack Bauer?")
+    print("Isn't the weather nice?")
+
+
+greet()
+
+
+# Function that allows for inputs
+def greet_with_name(name):
+    print(f"Hello {name}")
+    print(f"How do you do {name}?")
+
+
+greet_with_name("Billie")
+
+
+O/p-
+
+Hello Angela
+How do you do Jack Bauer?
+Isn't the weather nice?
+Hello Billie
+How do you do Billie?
+
+=========================================================================================================================================================
+
+Positional vs keyword Arguments
+
+Multiple Inputs
+You can have multiple inputs in functions. All you need to do is separate them with a comma ,.
+
+PAUSE 1
+Create a function with multiple inputs
+
+PAUSE 2
+Modify the function so that it prints the expected values.
+
+def greet_with(name, location)
+    Hello name
+    What is it like in location
+Positional Arguments
+By default, when you create a function in Python, it will keep the order of arguments in the function definition.
+
+e.g. In the function below, the first argument that goes in will always be printed before the second one. a = 2, b = 1
+
+def my_function(a, b)
+  print(a)
+  print(b)
+  
+ my_function(2, 1)
+ #It will print:
+ # 2
+ # 1
+Keyword Arguments
+
+You can use keywords when you provide the arguments when you call a function so that there is less confusion which value is assigned to which input parameter.
+
+PAUSE 3
+Call the greet_with() function using keyword arguments.
+
+Code-
+
+# Functions with input
+
+# def greet_with_name(name):
+#     print(f"Hello {name}")
+#     print(f"How do you do {name}?")
+#
+#
+# greet_with_name("Jack Bauer")
+
+# Functions with more than 1 input
+def greet_with(name, location):
+    print(f"Hello {name}")
+    print(f"What is it like in {location}")
+
+# Positional arguments
+# greet_with("Jack Bauer", "Nowhere")
+# greet_with("Nowhere", "Jack Bauer")
+
+
+# Keyword arguments
+greet_with(location="London", name="Angela")
+
+
+O/p-
+
+Hello Angela
+What is it like in London
+
+==============================================================================================================================================
+
