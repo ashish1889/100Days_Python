@@ -1,0 +1,24 @@
+Leap year program-
+
+def is_leap_year(year):
+    # Write your code here. 
+    # Don't change the function name.
+    if(year%100== 0 and year%400 == 0):
+        return True
+    elif(year%100!=0 and year%4 == 0):
+        return True
+    else:
+        return False
+		
+		
+What would you predict to be the result of running the following code?
+
+def outer_function(a, b):
+    def inner_function(c, d):
+        return c + d
+    return inner_function(a, b)
+ 
+result = outer_function(5, 10)
+print(result)
+
+O/p: 15
