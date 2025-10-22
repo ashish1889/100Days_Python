@@ -36,4 +36,48 @@ tim.left(90)
 window.exitonclick()
 
 ============================================================================================================================================================
+Drawing a dashed line-
+
+
+import turtle as t
+tim = t.Turtle()
+window = t.Screen()
+
+for _ in range(15):
+    tim.forward(10)
+    tim.penup()
+    tim.forward(10)
+    tim.pendown()
+
+
+
+window.exitonclick()
+
+===============================================================================================================================================================
+
+Code to draw various shapes-
+
+
+import turtle as t
+import random
+
+tim = t.Turtle()
+window = t.Screen()
+
+colours = ["CornflowerBlue","DarkOrchid","IndianRed","DeepSkyBlue","wheat"]
+
+def draw_shape(num_sides):
+    angle = 360 / num_sides
+    for _ in range(num_sides):
+        tim.forward(100)
+        tim.right(angle)
+
+# here range will exclude the last index - [3,11)
+for shape_side_n in range(3,11):
+    tim.color(random.choice(colours))
+    draw_shape(shape_side_n)
+
+
+window.exitonclick()
+
 
