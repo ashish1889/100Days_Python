@@ -1,0 +1,39 @@
+Code to draw a square by Turtle-
+
+from turtle import Turtle,Screen
+
+tim = Turtle()
+window = Screen()
+
+tim.forward(100)
+tim.left(90)
+tim.forward(100)
+tim.left(90)
+tim.forward(100)
+tim.left(90)
+tim.forward(100)
+tim.left(90)
+
+window.exitonclick()
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>============================================================<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Using alias for the same functionality below is the code-
+
+import turtle as t  #alias 
+tim = t.Turtle()
+window = t.Screen()
+
+tim.forward(100)
+tim.left(90)
+tim.forward(100)
+tim.left(90)
+tim.forward(100)
+tim.left(90)
+tim.forward(100)
+tim.left(90)
+
+window.exitonclick()
+
+============================================================================================================================================================
+
