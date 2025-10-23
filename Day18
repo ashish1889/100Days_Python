@@ -229,4 +229,27 @@ for dot_count in range(1,number_of_dots+1):
 
 screen.exitonclick()
 
+========================================================================================================================================================================================
+
+Links(Resources)-
+
+https://docs.python.org/3/library/turtle.html
+https://trinket.io/docs/colors
+https://cs111.wellesley.edu/reference/colors
+https://replit.com/@appbrewery/day-18-1-start
+https://replit.com/@appbrewery/day-18-1-end
+https://replit.com/@appbrewery/day-18-2-start
+https://replit.com/@appbrewery/day-18-2-end
+https://replit.com/@appbrewery/day-18-3-start
+https://replit.com/@appbrewery/day-18-3-end
+https://replit.com/@appbrewery/day-18-4-start
+https://replit.com/@appbrewery/day-18-4-end
+https://en.wikipedia.org/wiki/Random_walk
+https://www.w3schools.com/colors/colors_rgb.asp
+https://replit.com/@appbrewery/day-18-5-start
+https://replit.com/@appbrewery/day-18-5-end
+https://pypi.org/project/colorgram.py/
+https://replit.com/@appbrewery/hirstpainting-final
+https://docs.google.com/forms/d/e/1FAIpQLSdwbmx2whgRNiciYXiSs2lJT6-dOYgvqGnXdVqfLv1fjln7kw/viewform?usp=send_form
+
 
