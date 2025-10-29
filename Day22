@@ -1,0 +1,38 @@
+pong- game initial canvas drawing and paddle construction on right side-
+
+from turtle import Screen, Turtle
+
+screen = Screen()
+screen.bgcolor("black")
+screen.setup(width=800,height=600)
+screen.title("Pong")
+screeen.tracer(0) #This call is to disable animation of paddle as it animates to right direction on canvas
+
+#paddle gets created in the background
+
+paddle = Turtle()
+paddle.shape("square")
+paddle.color("white")
+paddle.shapesize(stretch_wid=5, stretch_len=1)
+paddle.penup()
+paddle.goto(350, 0)
+
+def go_up():
+    new_y = paddle.ycor() + 20
+    paddle.goto(paddle.xcor(), new_y)
+
+def go_down():
+    new_y = paddle.ycor() - 20
+    paddle.goto(paddle.xcor(), new_y)
+
+screen.listen()
+screen.onkey(go_up,"Up")
+screen.onKey(go_down,"Down")
+
+game_is_on = True
+
+#Below loop will allow the paddle show up at the end of the screen which was removed by screen.tracer(0), here screen update takes place
+while game_is_on:
+    screen.update()
+
+screen.exitonclick()
